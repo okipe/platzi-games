@@ -1,3 +1,12 @@
 extend components/template.pug
 block contenidos
-    h1 Homepage
+    aside 
+        h1.aside__title MENU 
+        ul.aside__link-container 
+            for enlace in enlaces
+                li=enlace
+    main 
+        h1 #{titulos[0]}
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro minus alias fugiat corrupti assumenda fugit ab magni dignissimos libero impedit culpa numquam ad saepe provident illum consectetur similique, necessitatibus laboriosam.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque eius beatae iusto. Qui id molestias nobis consequuntur doloribus ullam odit culpa sed blanditiis quo, officiis maiores fugit! Reiciendis, officia eligendi.
+        a.boton VER MÁS
