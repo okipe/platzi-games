@@ -1,9 +1,9 @@
 $fuente1: 'Lato', sans-serif;
 $fuente2: 'Oswald', sans-serif;
 $color-primario: #333333;
-$color-claro: #FFFFFF;
-$color-secundario: #8841DA;
-$color-variacion: #3f579a;
+$color-claro: #FFD500;
+$color-secundario: #0341AE;
+$color-variacion: #FF971C;
 
 @mixin caja {
 	border-radius: 20px;
@@ -44,6 +44,5 @@ body {
 main {
 	display: flex;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 }
-
