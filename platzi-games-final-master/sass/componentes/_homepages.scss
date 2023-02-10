@@ -1,0 +1,51 @@
+@use 'globales' as *;
+
+@mixin position-absolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.contenedor--home {
+    height: 1200px;
+    width: 1300px;
+    margin: 0 auto;
+    border: 2px solid blue;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, 18rem);
+    gap: 20px;
+}
+
+.caja__imagen {
+    img {
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      @include position-absolute;
+    }
+}
+.caja--con-fondo {
+    position: relative;
+    overflow: hidden;
+}
+.caja--grande {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+.caja--pequena {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.caja--mediana {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+.banner--homepage {
+    grid-column: span 1;
+    grid-row: span 2;
+    border: 1px solid red;
+  }
