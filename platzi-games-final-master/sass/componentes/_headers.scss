@@ -1,43 +1,74 @@
-@use 'globales' as *;
-
 .header--principal {
-    display: flex;
-    padding: 0 20px 20px 20px;
-    margin-bottom: 20px;
-    width: 100%;
-    height: 90px;
-    border-bottom: 1px solid #ebebeb;
+	display: flex;
+	padding: 0 20px 20px 20px;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 90px;
+	border-bottom: 1px solid #ebebeb;
 }
-
-.nav--header {
-    ul {
-        display: flex;
-        padding-top: 35px;
-        li {
-            list-style: none;
-            margin-right: 50px;
-        }
-        a {
-            color: $color-variacion;
-            @include titulos($Fuente2);
-        }
-    }
+.nav--header ul {
+	display: none;
+	padding-top: 35px;
+	li {
+		list-style: none;
+		margin-right: 50px;
+	}
+	a {
+		color: $color-variacion;
+		@include titulos($Fuente2);
+	}
+	@include media(desktop-s){
+		display: flex;
+	}
 }
 
 .header__busqueda {
-    display: flex;
-    margin-left: auto;
-    padding-top: 35px;
-    &:hover {
-        text-decoration: none;
-    }
-    i {
-        font-size: 20px;
-        margin-right: 10px;
-        color: $color-secundario;
-    }
-    span {
-        color: $color-variacion;
-        @include titulos($Fuente2);
-    }
+	display: none;
+	margin-left: auto;
+	padding-top: 35px;
+	&:hover {
+		text-decoration: none;
+	}
+	i {
+		font-size: 20px;
+		margin-right: 10px;
+		color: $color-secundario;
+	}
+	span {
+		color: $color-variacion;
+		@include titulos($Fuente2);	
+	}
+	@include media(desktop-s){
+		display: flex;
+	}
+}
+
+.header__hamburger{
+	display: none;
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	top: 93px;
+	right: 7px;
+	border: 3px solid $color-secundario;
+	border-radius: 100%;
+	background: $color-claro;
+	cursor: pointer;
+	z-index: 100;
+
+	.button__menu {
+		background: transparent;
+		border: none;
+		outline: none;
+	}
+
+	figure, img {
+		height: 2rem;
+	}
+
+	@include media(mobile-only) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }

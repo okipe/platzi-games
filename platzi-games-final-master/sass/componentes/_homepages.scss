@@ -1,51 +1,53 @@
-@use 'globales' as *;
-
-@mixin position-absolute {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-}
-
 .contenedor--home {
-    height: 1200px;
-    width: 1300px;
-    margin: 0 auto;
-    border: 2px solid blue;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(100px, 18rem);
-    gap: 20px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	@include media(desktop-s){
+		height: 1200px;
+		width: 1300px;
+		margin: 0 auto;
+		@include display-grid;
+		@include grid-template-columns(1fr grid-repeat(3));
+		@include grid-template-rows(1fr grid-repeat(3));
+	}
 }
 
-.caja__imagen {
-    img {
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      @include position-absolute;
-    }
-}
-.caja--con-fondo {
-    position: relative;
-    overflow: hidden;
-}
 .caja--grande {
-    grid-column: span 3;
-    grid-row: span 2;
+	@include grid-row(1,3);
+	@include grid-column(1,4);
 }
-.caja--pequena {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-.caja--mediana {
-    grid-column: span 2;
-    grid-row: span 1;
-}
+
 .banner--homepage {
-    grid-column: span 1;
-    grid-row: span 2;
-    border: 1px solid red;
-  }
+	@include grid-row(2, 4);
+	@include grid-column(4, 5);	
+}
+
+.sidebar--listado {
+	@include grid-row(3, 5);
+	@include grid-column(1, 2);	
+}
+
+.caja-zelda {
+	@include grid-row(3, 4);
+	@include grid-column(2, 4);	
+}
+
+.caja-rdr2 { 
+	@include grid-row(1, 2);
+	@include grid-column(4, 5);	
+}
+
+.caja-ff { 
+	@include grid-row(4, 5);
+	@include grid-column(2, 3);	
+} 
+
+.caja-fortnite { 
+	@include grid-row(4, 5);
+	@include grid-column(3, 4);	
+} 
+
+.caja-xbox { 
+	@include grid-row(4, 5);
+	@include grid-column(4, 5);	
+} 
